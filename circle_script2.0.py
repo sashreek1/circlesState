@@ -45,10 +45,12 @@ def task(rad1,rad2,dist):
         message_display(green,(100,100),"The circles are tangential")
     elif abs(rad1-rad2) == dist:
         message_display(green, (100, 100), "The circles are tangential")
-    elif dist ==0:
+    elif dist == 0:
         message_display(green, (100, 100), "The circles are concentric")
-    elif (rad2+rad1 < dist and dist!=0)or(min(rad1,rad2)>dist):
+    elif (rad2+rad1 < dist and dist!=0):
         message_display(green,(100,100),"The circles have no points of intersection")
+    elif min(rad1,rad2)+dist<max(rad2,rad1):
+        message_display(green, (100, 100), "The circles have no points of intersection")
     elif rad2+rad1 > dist and dist!=0:
         message_display(green,(100,100),"The circles have two points of intersection")
 
