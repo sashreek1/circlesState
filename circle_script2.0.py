@@ -41,7 +41,10 @@ def task(rad1,rad2,dist):
     gameDisplay.fill(black)
     circ_disp(700-(dist//2),500,rad1,red)
     circ_disp(700+(dist//2),500,rad2,blue)
-    if rad2+rad1 == dist:
+    if int(rad1)<0 or int(rad2)<0 or int(dist)<0:
+        gameDisplay.fill(black)
+        message_display(green,(100,100),"please enter a positive distance value")
+    elif rad2+rad1 == dist:
         message_display(green,(100,100),"The circles are tangential")
     elif abs(rad1-rad2) == dist:
         message_display(green, (100, 100), "The circles are tangential")
